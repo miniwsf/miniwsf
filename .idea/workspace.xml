@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fd76f33-58b2-4134-9849-9ac7dd3bd138" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_posts/2018-09-17-从输入URL到页面加载完成.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2018-09-17-从输入URL到页面加载完成.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -55,8 +54,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/2018-09-17-从输入URL到页面加载完成.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="75">
-                <caret line="105" column="64" selection-start-line="105" selection-start-column="25" selection-end-line="105" selection-end-column="64" />
+              <first_editor relative-caret-position="215">
+                <caret line="289" column="28" selection-start-line="289" selection-start-column="28" selection-end-line="289" selection-end-column="28" />
               </first_editor>
               <second_editor />
             </state>
@@ -86,6 +85,7 @@
       <find>BY_bolg_logo</find>
       <find>zhihu_username</find>
       <find>技术博客</find>
+      <find>专用碎碎</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -249,7 +249,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28731000" />
+    <option name="totallyTimeSpent" value="29242000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="56" width="1440" height="816" extended-state="0" />
@@ -518,8 +518,8 @@
     <entry file="file://$PROJECT_DIR$/_posts/2018-09-17-从输入URL到页面加载完成.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="75">
-            <caret line="105" column="64" selection-start-line="105" selection-start-column="25" selection-end-line="105" selection-end-column="64" />
+          <first_editor relative-caret-position="215">
+            <caret line="289" column="28" selection-start-line="289" selection-start-column="28" selection-end-line="289" selection-end-column="28" />
           </first_editor>
           <second_editor />
         </state>
