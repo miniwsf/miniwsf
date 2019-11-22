@@ -4,7 +4,7 @@ title:      XMLHttpRequest（译文）
 subtitle:   
 date:       2019-11-22
 author:     wsf
-header-img: img/post-bg-ios9-web.jpg
+header-img: img/20191122/451571454809_2.pic_hd.jpg
 catalog: true
 tags:
     - XMLHttpRequest
