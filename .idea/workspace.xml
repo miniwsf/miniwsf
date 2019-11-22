@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fd76f33-58b2-4134-9849-9ac7dd3bd138" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/_posts/2019-11-22-XMLHttpRequest（译文）.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_posts/2019-11-22-移动端真机调试.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/20191122/21574417048_.pic_hd.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2019-11-22-XMLHttpRequest（译文）.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2019-11-22-XMLHttpRequest（译文）.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -94,8 +91,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/2019-11-22-XMLHttpRequest（译文）.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="594">
-                <caret line="511" column="10" selection-start-line="511" selection-start-column="10" selection-end-line="511" selection-end-column="10" />
+              <first_editor relative-caret-position="238">
+                <caret line="14" selection-start-line="14" selection-end-line="14" />
               </first_editor>
               <second_editor />
             </state>
@@ -304,7 +301,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31406000" />
+    <option name="totallyTimeSpent" value="31488000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="821" extended-state="6" />
@@ -587,8 +584,8 @@
     <entry file="file://$PROJECT_DIR$/_posts/2019-11-22-XMLHttpRequest（译文）.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="594">
-            <caret line="511" column="10" selection-start-line="511" selection-start-column="10" selection-end-line="511" selection-end-column="10" />
+          <first_editor relative-caret-position="238">
+            <caret line="14" selection-start-line="14" selection-end-line="14" />
           </first_editor>
           <second_editor />
         </state>
