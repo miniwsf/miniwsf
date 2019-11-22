@@ -15,6 +15,7 @@ tags:
 
 ### 摘要
 XMLHttpRequest标准定义了一套API: 提供在客户端和服务端之间传输数据的脚本客户端功能。
+
 ### 1. 介绍
 本节是非规范的。
 XMLHttpRequest是用于获取资源的API。
@@ -57,6 +58,7 @@ function fetchStatus(address) {
   client.send();
 }
 ```
+
 #### 1.1 规范史
 XMLHttpRequest 对象初定义于 WHATWG 的 HTML 项目中，很久之后微软发起了一个实现。它于 2006 年被移到 W3C。直到 2011 年底，XMLHttpRequest 的扩展（XMLHttpRequest Level 2）被开发于一份独立的草案中，这时两份草案被合并，
 XMLHttpRequest 又从一个 standards perspective 变成一个单一的实体。2012年底，它又移回了WHATWG。
@@ -65,15 +67,19 @@ XMLHttpRequest 又从一个 standards perspective 变成一个单一的实体。
 - [public-webapi@w3.org](https://lists.w3.org/Archives/Public/public-webapps/)
 - [public-appformats@w3.org](https://lists.w3.org/Archives/Public/public-webapi/)
 - [public-webapps@w3.org](https://lists.w3.org/Archives/Public/public-appformats/)
+
 ### 2. 一致性
 同所有章节中明确标明了非规范的部分一样，这份规范中的所有的图表、范例及注释都是非规范的。其它的所有内容都是规范的。
 在这份规范的规范部分中，关键词“必须”、“必须不”、“需要”、“应该”、“不该”、“被推荐的”、“可能”和“可选的”，都要被作为 RFC2119 中的描述来解读。
 为了确保可读性，这些单词不会以全大写的形式出现在这份文档中。[[RFC2119]](https://xhr.spec.whatwg.org/#refsRFC2119)
+
 #### 2.1 扩展性
 强烈建议用户代理，工作组和其它有兴趣的团体与WHATWG社区讨论新特性。
+
 ### 3. 术语
 本规范使用的术语在DOM，DOM解析和序列化，编码，功能策略，访存，文件API，HTML，HTTP，URL，Web IDL和XML中贯穿始终。
 它使用HTML的印刷约定。
+
 ### 4. XMLHttpRequest 接口
 ```javascript
 [Exposed=(Window,DedicatedWorker,SharedWorker)]
@@ -135,17 +141,20 @@ interface XMLHttpRequest : XMLHttpRequestEventTarget {
 XMLHttpRequest 对象有一个与之关联的 XMLHttpRequestUpload。  
 XMLHttpRequest 对象有一个与之关联的状态：unsend,opened,headers received, loading, done之一。若无声明，那么状态为unsent。  
 XMLHttpRequest 对象有一个与之关联的send（）标志。若无声明，则未设置。
+
 #### 4.1 构造器
 ```javascript
     // 非规范
     client = new XMLHttpRequest();  // 返回一个新的XMLHttpRequest对象
 ```
 XMLHttpRequest()方法必须返回一个新的XMLHttpRequest对象。
+
 #### 4.2 垃圾回收
 如果 XMLHttpRequest 对象的状态是 OPENED 并且已设置 send() 标识，或者它的状态是 HEADERS_RECEIVED，又或者它的状态是 LOADING 
 且它对以下事件注册了一个以上的事件监听：readystatechange、progress、about、error、load、timeout、loadend，
 凡满足以上这些情况的 XMLHttpRequest 就必须不被垃圾回收机制回收。
 如果 XMLHttpRequest 对象在连接尚存打开时被垃圾回收机制回收了，用户代理必须终止请求。
+
 #### 4.3 事件处理
 下列是事件处理（它们对应事件处理的事件类型），在对象实现一个继承于 XMLHttpRequestEventTarget 的接口时必须实现它们：
 事件处理程序 | 事件处理程序事件类型
@@ -161,6 +170,7 @@ onloadend | loadend
 事件处理程序 | 事件处理程序事件类型
 ---|---
 onreadystatechange | readystatechange
+
 #### 4.4 状态
 ```
     // 非规范
@@ -175,6 +185,7 @@ opened | OPENED(数字值为1) | open() 方法已经成功调用。在此期间�
 headers received | HEADERS_RECEIVED(数字值为2) | 所有的重定向都已经跳转（如果有的话），并且已经接收到了所有的HTTP响应头。
 loading | LOADING(数字值为3) | 响应的主体部分正在被接收。
 done | DONE(数字值为4) | 数据传输已经完成或者传输过程中出现错误（例如无限重定向）。
+
 #### 4.5 请求
 每个 XMLHttpRequest 对象都有下面与请求相关的概念：请求方法、请求URL、作者请求头、请求主体、异步标识、上传完成标识以及上传事件标识。  
 作者请求头初始为空头列表。
@@ -182,6 +193,7 @@ done | DONE(数字值为4) | 数据传输已经完成或者传输过程中出现
 异步标识、上传完成标识、上传事件标识，初始都未设置。
 注：在一个 XMLHttpRequest 对象上注册一个或者多个事件监听会导致CORS预检请求。（因为注册事件监听会导致上传监听标志被设置，从而导致
 use-CORS-preflight标志被设置）
+
 ##### 4.5.1 open()方法
 ```
     // 非规范
@@ -225,6 +237,7 @@ open(method, url)或open(method, url, async, username, password)方法必须以�
     2. 触发一个名为 readystatechange 的事件。
     
 注：定义了两个open()方法的原因是由于用于编写XMLHttpRequest标准的编辑软件的限制。
+
 ##### 4.5.2 setRequestHeader() 方法
 ```
     // 非规范
@@ -253,7 +266,7 @@ client.send();
 // X-Test: one, two
 ```
  
- ##### 4.5.3 timeout属性
+##### 4.5.3 timeout属性
  ```
     // 非规范
     client . timeout
@@ -280,6 +293,7 @@ withCredentials属性必须返回该值。默认值必须为false。
 2. 如果send()标志设置，则抛出"InvalidStateError" DOMException。
 3. 将withCredentials属性值设置为给定值。
 注：当获取同源资源时，withCredentials属性无效。
+
 ##### 4.5.5 upload属性
 ```
     // 非规范
@@ -288,6 +302,7 @@ withCredentials属性必须返回该值。默认值必须为false。
 ```
 upload属性必须返回与之关联的XMLHttpRequestUpload对象。
 注：如前所诉，每个XMLHttpRequest对象都有一个与之关联的XMLHttpRequestUpload对象。
+
 ##### 4.5.6 === send()方法 ===
 ```
     // 非规范
@@ -349,6 +364,7 @@ use-URL-credentials标志：如果请求URL的用户名不是空字符串或者�
       要处理响应以进行响应，请运行以下步骤：
       
 - 如果同步标志设置了，那么执行这些步骤：（现在已经不鼓励使用同步标志了，所以我不想翻译了）
+
 ##### 4.5.7 abort()方法
 ```
     // 非规范
@@ -360,17 +376,23 @@ abort()方法必须执行这些步骤：
 2. 如果状态是opened并且send()标志已设置，或者是headers received，或是loading，运行事件中止的请求错误步骤。
 3. 如果状态done，则将状态设置为unsent并响应网络错误。
 注：不调度readystatechange事件。
+
 #### 4.6 响应
 XMLHttpRequest对象有一个与之关联的响应。除非有声明，否则为网络错误。  
 XMLHttpRequest对象还有一个与之关联的接收字节（一个字节序列）。除非有声明，否则为空字节序列。
+
 ##### 4.6.1 responseURL属性
 如果响应的url为null，则responseURL属性返回空字符串。  ？？？？？？？？
+
 ##### 4.6.2 status属性
 status属性必须返回响应的状态。
+
 ##### 4.6.2 statusText属性
 statusText属性必须返回响应的状态消息。
+
 ##### 4.6.4 getResponseHeader()方法   ?????????
 调用getResponseHeader（name）方法时，必须返回从响应的标头列表中获取名称的结果。
+
 ##### 4.6.5 getAllResponseHeaders()方法
 如果以下步骤返回true，则字节序列a比字节序列b的大写字节小：
 - 让A为a，字节大写
@@ -403,6 +425,7 @@ getAllResponseHeaders()方法必须执行这些步骤：
     server: Apache/1.3.31 (Unix)
     transfer-encoding: chunked
 ```
+
 ##### 4.6.6 响应体
 响应MIME类型是运行以下步骤的结果：
 1. 假设mimeType是从响应的标题列表中提取MIME类型的结果。
@@ -452,11 +475,13 @@ text响应是这些步骤的返回值：
 3. 如果responseType是空字符串，charset是null，最后的MIME类型是XML MIME类型，那么使用XML规范中规定的规则来确定编码。设字符集为确定的编码。(XML) (XMLNS
 4. 如果charset为空，则将charset设置为UTF-8。
 5. 使用回退编码字符集返回对接收字节运行解码的结果。
+
 ##### overrideMimeType() 方法
 当overrideMimeType(mime)被调用时，必须执行这些步骤：
 1. 如果状态是loading或done，那么抛出"InvalidStateError" DOMException
 2. 将替代MIME类型设置为解析mime的结果。
 3. 如果覆盖MIME类型失败，则将覆盖MIME类型设置为application / octet-stream。
+
 ##### responseType属性
 responseType属性必须返回其值，初始化为一个空的字符串。
 设置responseType属性需要执行这些步骤：
@@ -464,6 +489,7 @@ responseType属性必须返回其值，初始化为一个空的字符串。
 2. 如果状态为loading或者done，那么抛出"InvalidStateError" DOMException
 3. 如果当前全局对象是window对象，并且设置了同步标志，那么抛出"InvalidAccessError" DOMException
 4. 设置responseType属性为给定的值
+
 ##### response属性
 response属性的值是执行了这些步骤的返回值：
 - 如果responseType是一个空的字符串或者"text"
@@ -480,6 +506,7 @@ responseText属性值是执行了以下步骤的返回值：
 1. 如果responseType是一个空的字符串或者"text"，那么抛出"InvalidStateError" DOMException.
 2. 如果状态不是loading或者done，返回空的字符串
 3. 返回text response
+
 ##### responseXML属性
 response属性的值是执行了这些步骤的返回值：
 1. 如果responseType是一个空的字符串或者"text"，那么抛出"InvalidStateError" DOMException.
@@ -487,11 +514,14 @@ response属性的值是执行了这些步骤的返回值：
 3. 断言：response对象不是失败
 4. 如果response对象不为null，返回该值
 5. 返回document响应
+
 ##### 事件摘要
 本节非规范性。
 在XMLHttpRequest或XMLHttpRequestUpload对象上调度以下事件：
+
 ##### 功能政策整合
 该规范定义了由字符串“ sync-xhr”标识的策略控制功能。其默认允许列表为*。
+
 ##### Formdata接口
 ```javascript
 typedef (File or USVString) FormDataEntryValue;
